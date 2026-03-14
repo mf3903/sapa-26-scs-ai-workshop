@@ -1,1 +1,3 @@
 # sapa-26-scs-ai-workshop
+
+## Env
