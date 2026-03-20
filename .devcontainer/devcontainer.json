@@ -6,7 +6,7 @@
       "version": "20"
     }
   },
-  "postCreateCommand": "pip install -r requirements.txt && npm install -g @anthropic-ai/claude-code",
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && source $HOME/.local/bin/env && uv sync && npm install -g @anthropic-ai/claude-code",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -19,7 +19,7 @@
         "GitHub.copilot-chat"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.defaultInterpreterPath": "/workspaces/sapa-26-scs-ai-workshop/.venv/bin/python",
         "jupyter.askForKernelRestart": false
       }
     }

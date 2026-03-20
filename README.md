@@ -62,6 +62,6 @@ Copilot is pre-configured. It activates automatically if your GitHub account has
 ```bash
 git clone https://github.com/YOUR_ORG/sapa-26-scs-ai-workshop
 cd sapa-26-scs-ai-workshop
-pip install -r requirements.txt
-jupyter lab
+uv sync
+uv run jupyter lab
 ```
