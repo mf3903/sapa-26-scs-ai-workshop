@@ -6,7 +6,7 @@
       "version": "20"
     }
   },
-  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && source $HOME/.local/bin/env && uv sync && npm install -g @anthropic-ai/claude-code",
+  "postCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && source $HOME/.local/bin/env && uv sync && uv run python -m ipykernel install --user --name=sapa-workshop --display-name='SAPA Workshop (Python 3.11)' && npm install -g @anthropic-ai/claude-code",
   "customizations": {
     "vscode": {
       "extensions": [
