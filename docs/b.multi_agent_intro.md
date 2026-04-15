@@ -35,6 +35,10 @@ Every concept below is a building block toward this system.
 
 ---
 
+## Part 1 — What Is an AI Agent?
+
+---
+
 ## 🤖 AI Assistant vs AI Agent
 
 These terms are often used interchangeably — but they describe fundamentally different systems.
@@ -90,6 +94,21 @@ graph TD
 
 ---
 
+## 💻 Hands-On #1 — Environment Check
+
+> Switch to Jupyter. Open **`notebooks/01_hello_agent.ipynb`**
+>
+> **What you will do:** Verify your environment is working and run a minimal single-node agent.
+> **Time:** ~5 minutes
+>
+> Come back here when you are done.
+
+---
+
+## Part 2 — The ReAct Loop & Building Your First Real Agent
+
+---
+
 ## 🔄 The ReAct Loop
 
 ReAct stands for **Reason + Act**. It is the fundamental operating cycle of any autonomous agent.
@@ -117,11 +136,26 @@ This loop repeats until the task is done — or until the agent decides it canno
 
 ---
 
+## 💻 Hands-On #2 — Build a Single Agent with a Tool
+
+> Switch to Jupyter. Open **`notebooks/02a_agent_basics.ipynb`**
+>
+> **What you will do:** Define a `@tool`, attach it to an agent with a persona, and watch the ReAct loop run live.
+> **Time:** ~8 minutes
+>
+> Come back here when you are done.
+
+---
+
+## Part 3 — Orchestrating Multiple Agents with LangGraph
+
+---
+
 ## 🗺️ Introducing LangGraph
 
 LangGraph is a framework for building agents as **state machines** — directed graphs where each node is an agent or function, and edges define how information flows.
 
-> **Mental model:** Think of your agent pipeline as a flowchart where the "clipboard" (shared State) gets passed from desk to desk, and each person adds their findings before handing it on.
+> **Mental model:** Think of your agent pipeline as a flowchart where a "clipboard" (shared State) gets passed from desk to desk, and each person adds their findings before handing it on.
 
 ```mermaid
 graph LR
@@ -158,7 +192,7 @@ graph TD
 
 | Term | One-line definition |
 |------|-------------------|
-| **State** | A typed Python dict shared by all nodes — think of it as the running file for the case |
+| **State** | A typed Python dict shared by all nodes — think of it as the running case file |
 | **Node** | A function that receives State, does work, and returns updated State |
 | **Edge** | A fixed transition — "always go from Node A to Node B" |
 | **Conditional Edge** | A dynamic transition — "go to Node B *or* Node C depending on what's in State" |
@@ -196,7 +230,7 @@ Each specialist gets a **focused system prompt** (persona), **specific tools**, 
 
 ## 🧪 Our Demo System — Full Picture
 
-Here is how the vocabulary maps to actual code you'll run in the notebooks:
+Here is how everything maps to actual code you are about to run:
 
 ```mermaid
 graph TD
@@ -220,23 +254,15 @@ graph TD
 ```
 
 > **Notice:** adding a new specialist = adding one node + one edge. Everything else stays the same.
-> This is the power of the graph pattern.
+> This is the power of the graph pattern — and exactly what you will do in Block D.
 
 ---
 
-## 💻 Getting Hands-on
+## 💻 Hands-On #3 — Run the Full Multi-Agent Pipeline
 
-Open the notebooks in order:
-
-**1. `notebooks/02a_agent_basics.ipynb`** ← Start here
-- Build a single agent with a persona and a tool
-- See the ReAct loop in action
-- ~5 min to run through
-
-**2. `notebooks/02b_orchestration.ipynb`** ← Then here
-- The full Clinical Trial Safety Analyzer
-- Agents are imported from `agents/` — notice the abstraction
-- Run the full pipeline on a synthetic AE report
-- ~10 min to run through
-
-After Block B: Block D gives you 60 minutes to add your own agent to this system.
+> Switch to Jupyter. Open **`notebooks/02b_orchestration.ipynb`**
+>
+> **What you will do:** Import three pre-built agents, assemble the LangGraph pipeline in ~10 lines of code, and run it on a synthetic adverse event report.
+> **Time:** ~10 minutes
+>
+> **Block D:** You will have 60 minutes to add your own agent to this pipeline.
